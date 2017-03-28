@@ -1,33 +1,3 @@
-<?php
-$version="";
-$server_name="";
-$server_port="";
-
- if (getenv('HOME') == ''){                       // Not set when running as service
-   $root= substr($_SERVER["DOCUMENT_ROOT"],0,-4); // this alternative with limitations
- }                                                // gets path to folder UniServerZ
-
- else{                                            // Set when run as standard program
-   $root= getenv('HOME');                         // this is the ideal method to
- }                                                // get the path to folder UniServerZ
-
-$file="$root\home\us_config\us_config.ini" ;     // Name and path of configuration file
-
-if (file_exists($file) && is_readable($file)){   // Check file
-  $settings=parse_ini_file($file,true);          // parse file into an array
-  $version=$settings["APP"]["AppVersion"];       // get parameter
-}
-
-
-$file="$root\home\us_config\us_user.ini" ;       // Name and path of user configuration file
-
-if (file_exists($file) && is_readable($file)){     // Check file
-  $settings=parse_ini_file($file,true);            // parse file into an array
-  $server_name=$settings["USER"]["US_SERVERNAME"]; // get parameter
-  $server_port=$settings["USER"]["AP_PORT"];       // get parameter
-}
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
