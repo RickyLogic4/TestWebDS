@@ -1,3 +1,3 @@
 -- Dev Notes --
 
-Setup Git repository.
+Setup Git 
